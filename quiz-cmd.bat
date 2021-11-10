@@ -55,4 +55,4 @@ if %st% == x goto del_startup
 if not %st% == X goto menu
 if not %st% == x goto menu
 if not defined %st% goto menu
-goto strtup
+goto startup
