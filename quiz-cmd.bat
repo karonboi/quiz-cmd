@@ -1,3 +1,7 @@
+rem quiz-cmd (v1.0)
+rem Written by karonboi [GitHub]
+rem Utilities used: zip, unzip
+
 @echo off
 title quiz-cmd
 
