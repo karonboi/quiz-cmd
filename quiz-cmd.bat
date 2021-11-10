@@ -58,15 +58,21 @@ if not %st% == x goto ifexist_profile
 if not defined %st% goto ifexist_profile
 goto startup
 
+:del_startup
+del .startup
+goto ifexist_profile
+
 :ifexist_profile
 rem Before heading to the menu, the game will start looking for player's profile.
 rem If there are no profiles, the game will ask you to create one and save as "profile.prfile".
 rem Only one profile can be read, so to switch players, I have created an external app named "player-exchange.exe". As its name suggests, it switches players' profiles.
-if exist profile.prfile goto read_profile
+if exist profile.prfile goto read_profile_1
 if not exist profile.prfile goto create_profile
 goto ifexist_profile
 
+
 :create_profile
+rem These info will be stored internally, if your device doesn't have a keylogger...
 cls
 title quiz-cmd [Create profile]
 echo  ________  ___  ___  ___  ________                ________  _____ ______   ________     
@@ -81,13 +87,12 @@ echo "
 echo "                                                                                        
 echo Looks like you are new here.
 echo Why don't you introduce yourself a bit?
-rem These info will be stored internally, if your device doesn't have a keylogger...
 echo.
-set /p name="My name is "
-set /p age="My age is "
-set /p gender="My gender is "
-set /p birth="I was born at"
-set /p hobby="My hobbies are "
+set /p name=My name is 
+set /p age=My age is 
+set /p gender=My gender is 
+set /p birth=I was born at 
+set /p hobby=My hobbies are 
 goto prepare_profile
 
 :prepare_profile
