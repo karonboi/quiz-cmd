@@ -132,6 +132,7 @@ goto menu
 
 :read_profile_1
 rem Extracts the profile.
+rem Some issues are ocurred here. Please help :')
 unzip profile.prfile
 copy name.txt profile\name.txt
 copy age.txt profile\age.txt
@@ -142,6 +143,7 @@ goto read_profile_2
 
 :read_profile_2
 rem Reads every text file with the corresponding info.
+rem Something have gone wrong with this code...
 < name.txt (
 set /p name=
 )
